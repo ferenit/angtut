@@ -1,0 +1,7 @@
+<p>
+  This is My Directive Practice
+</p>
+<button type="button" (click)="pushTimeToEgArray();" >Add Time</button>
+<button type="button" (click)="initEgArray();" >Init Time</button>
+<p>Displaying Time</p>
+<p *ngFor = "let eg of egArray; let i = index">{{i}}->{{eg}}</p>
