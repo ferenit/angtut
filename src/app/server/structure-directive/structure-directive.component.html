@@ -1,0 +1,35 @@
+<li class="list-group-item"> Structure Directives :  <button class="btn btn-primary" (click)="toggleDirectivePractice();">{{directivePracticeBtnTxt}}</button>
+  <ul class="list-group">
+          <li class="list-group-item">*ngIf
+                  <ul class="list-group">
+                          <li class="list-group-item">ng if is a structual directive , structural 
+                                  directives change the structure of the dom</li>
+                                  <li class="list-group-item">Structural directives are denoted by the prefix "*"</li>
+                  
+                  <li class="list-group-item">Example *ngIf 
+                                  <ul class="list-group">
+                                                  <li class="list-group-item">
+                                                          Are you a fool &nbsp; Answer : {{foolText}}<br />
+                                                          <button class="btn" 
+                                                          [ngClass]="foolText ? 'btn-primary': 'btn-error'" 
+                                                          (click)=setFool(true)>Yes</button>
+                                                  <button class="btn"
+                                                  [ngClass]="!foolText ? 'btn-primary': 'btn-error'" 
+                                                   (click)=setFool(false)>No</button></li>
+                                                  <li *ngIf="foolText; else notAFool" class="list-group-item">Glad we both agree !! :D</li>
+                                                  <li *ngIf="!foolText" class="list-group-item">Using ! in *ngIf == agree to disagree , I know you are  !! :P</li>
+                                                  <ng-template #notAFool>
+                                                                  <li class="list-group-item">Using else in *ngIf and a template == agree to disagree , I know you are  !! :P</li>
+                                                  </ng-template>
+                                                          </ul>
+                          </li>
+                  </ul>
+          </li>
+          <li class="list-group-item"> *ngFor
+                  <ul class="list-group">
+                          <li class="list-group-item" *ngFor="let animal of animals">{{animal}}</li>
+                  </ul>
+          </li>
+          <li class="list-group-item" *ngIf="isShowDirectivePractice"><app-directive-practice></app-directive-practice></li>
+  </ul>
+  </li>

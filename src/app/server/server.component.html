@@ -1,69 +1,10 @@
 ----------------------------------------------------
 <br/><h6>Starting of the "{{componentName}}" Component</h6>
 <ul class="list-group">
-<li class="list-group-item">
-    String Interpolation in Angular is done using 2 curly braces</li>
-<li class="list-group-item">String Interpolation can automatically convert other format data to String see : {{getCount()}}</li>
-<li class="list-group-item">
-    Two way Data Binding can be achieved using ngModel enclosed between [(ngModel)].<br/>
-    we use  "[()]" as this will trigger both Property Binding and Event Binding<br/>
-    Bind Example  : <input type="text" [(ngModel)]="bindExample"/><br/>
-    The value from above textbox is "{{bindExample}}"
-</li>
-<li class="list-group-item">[] indicates Property binding
-        <ul class="list-group">
-                <li class="list-group-item"> Example Enablement of a button in 3 seconds<br/>
-                <li class="list-group-item"><button class="btn btn-primary" [disabled]="buttonDisable">{{buttonStateString}}</button> Button is {{buttonStateString}}</li>
-        </ul>
-</li>
-<li class="list-group-item">() indicates Event binding
-        <ul class="list-group">
-                <li class="list-group-item"> Example Event Binding<br/>
-                <li class="list-group-item">
-                    <button class="btn btn-primary" (click)="onClickEventBindingBtn();">{{eventBinding}}</button>
-                    Event executed {{eventBindingCount}} times
-                </li>                
-        </ul>
-</li>
-<li class="list-group-item"> Structure Directives :  <button class="btn btn-primary" (click)="toggleDirectivePractice();">{{directivePracticeBtnTxt}}</button>
-        <ul class="list-group">
-                <li class="list-group-item">*ngIf
-                        <ul class="list-group">
-                                <li class="list-group-item">ng if is a structual directive , structural 
-                                        directives change the structure of the dom</li>
-                                        <li class="list-group-item">Structural directives are denoted by the prefix "*"</li>
-                        
-                        <li class="list-group-item">Example *ngIf 
-                                        <ul class="list-group">
-                                                        <li class="list-group-item">
-                                                                Are you a fool &nbsp; Answer : {{foolText}}<br />
-                                                                <button class="btn btn-primary" (click)=setFool(true)>Yes</button>
-                                                        <button class="btn btn-error" (click)=setFool(false)>No</button></li>
-                                                        <li *ngIf="foolText; else notAFool" class="list-group-item">Glad we both agree !! :D</li>
-                                                        <li *ngIf="!foolText" class="list-group-item">Using ! in *ngIf == agree to disagree , I know you are  !! :P</li>
-                                                        <ng-template #notAFool>
-                                                                        <li class="list-group-item">Using else in *ngIf and a template == agree to disagree , I know you are  !! :P</li>
-                                                        </ng-template>
-                                                                </ul>
-                                </li>
-                        </ul>
-                </li>
-                <li class="list-group-item"> *ngFor
-                        <ul class="list-group">
-                                <li class="list-group-item" *ngFor="let animal of animals">{{animal}}</li>
-                        </ul>
-                </li>
-                <li class="list-group-item" *ngIf="isShowDirectivePractice"><app-directive-practice></app-directive-practice></li>
-        </ul>
-        </li>
-        <li class="list-group-item">Attribute Directives
-                <ul class="list-group">
-                                <li class="list-group-item">ngStyle and ngClass</li>
-                                <li class="list-group-item" [ngStyle]="{backgroundColor : getColor()}"
-                                [ngClass]="{isFool : foolText, isNotFool : !foolText}"> setting background color according to the foolText </li>
-                                
-                                
-                </ul>
-        </li>
-        
+<app-string-interpolation></app-string-interpolation>
+<app-two-way-bind></app-two-way-bind>
+<app-property-bind></app-property-bind>
+<app-event-bind></app-event-bind>
+<app-structure-directive></app-structure-directive>
+<app-attribute-directive></app-attribute-directive>
 </ul>
