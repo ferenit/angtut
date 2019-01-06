@@ -7,4 +7,13 @@
 <app-event-bind></app-event-bind>
 <app-structure-directive></app-structure-directive>
 <app-attribute-directive></app-attribute-directive>
+<li class="list-group-item">
+    <ul class="list-group">Getting input for the below Component
+    <li class="list-group-item">Name : <input type="text" [(ngModel)]="serverDescription.type"> </li>
+    <li class="list-group-item">Description : <input type="text" [(ngModel)]="serverDescription.description"> </li>
+    <li class="list-group-item"><input type="button" class="btn btn-primary" (click)= "addServers(serverDescription)"
+         value="Add server" /></li>
+</ul>
+</li>
+<app-server-child  [serverValue]="serverValue" [serverDescriptions]="serverDescriptions" ></app-server-child>
 </ul>

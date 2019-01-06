@@ -12,6 +12,8 @@ import { EventBindComponent } from './server/event-bind/event-bind.component';
 import { StructureDirectiveComponent } from './server/structure-directive/structure-directive.component';
 import { AttributeDirectiveComponent } from './server/attribute-directive/attribute-directive.component';
 import {ServerService} from './server/server.service';
+import { ServerChildComponent } from './server/server-child/server-child.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import {ServerService} from './server/server.service';
     PropertyBindComponent,
     EventBindComponent,
     StructureDirectiveComponent,
-    AttributeDirectiveComponent    
+    AttributeDirectiveComponent,
+    ServerChildComponent
   ],
   imports: [
     BrowserModule,

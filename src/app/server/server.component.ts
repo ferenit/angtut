@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: '.app-server',
@@ -13,6 +13,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerComponent implements OnInit {
   
+  serverValue = {heading : 'Custom binding - Getting value from Parent component \'Server Component\''}
+  serverDescription = {type: '', description : ''}
+  //serverDescriptions : [serverDescription];
+  serverDescriptions = [this.serverDescription]
+
   bindExample: String = 'Bind Example';
   componentName: String = 'Server App';
   
@@ -21,5 +26,10 @@ export class ServerComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  addServers(serverDescription)
+  {
+    this.serverDescriptions.push(serverDescription);
   }
  }
